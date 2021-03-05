@@ -15,66 +15,66 @@ var characters;
 
 function passwordReqs() {
   req1 = confirm("Would you like to include length requirements?");
-  req2 = confirm("Would you like to specify character type requirements?");
+  req2 = confirm("Would you like to specify character types to include in the random generation?");
   if((req1 ===true) && (req2 === true)) {
     minLength = prompt("Minimum password length (8 is recommended):", "8");
     alert(`You selected ${minLength} as your minumum password length`);
     maxLength = prompt("Maximum password length (128 is recommended): ", "128");
     alert(`You selected ${maxLength} as your maximum password length`);
-    upperChar = prompt("Would you like to require uppercase characters?: ", "Yes");
+    upperChar = prompt("Would you like to include uppercase characters? Type Yes or No: ", "Yes");
       if (upperChar === "Yes") {
-        alert('You selected to require uppercase character specifications.');
+        alert('You selected to include uppercase character specifications.');
         upperChar = true;
       }
       else {
-        alert('You selected to not require uppercase character specifications');
+        alert('You selected to not include uppercase character specifications');
         upperChar = false;
       }
-    specChar = prompt("Would you like to require special characters (e.g. !, ~, *, etc.)?: ", "Yes");
+    specChar = prompt("Would you like to include special characters (e.g. !, ~, *, etc.)? Type Yes or No: ", "Yes");
       if (specChar === "Yes") {
-        alert('You selected to require special character specifications.');
+        alert('You selected to include special character specifications.');
         specChar = true;
       }
       else {
-        alert('You selected to not require special character specifications');
+        alert('You selected to not include special character specifications');
         specChar = false;
       }
-      numChar = prompt("Would you like to require numeric characters?: ", "Yes");
+      numChar = prompt("Would you like to include numeric characters? Type Yes or No: ", "Yes");
       if (numChar === "Yes") {
-        alert('You selected to require numeric character specifications.');
+        alert('You selected to include numeric character specifications.');
         numChar = true;
       }
       else {
-        alert('You selected to not require numeric character specifications');
+        alert('You selected to not include numeric character specifications');
         numChar = false;
       }
   }
   else if ((req1 !== true) && (req2 === true)) {
-    upperChar = prompt("Would you like to require uppercase characters?: ", "Yes");
+    upperChar = prompt("Would you like to include uppercase characters? Type Yes or No: ", "Yes");
       if (upperChar === "Yes") {
-        alert('You selected to require uppercase character specifications.');
+        alert('You selected to include uppercase character specifications.');
         upperChar = true;
       }
       else {
-        alert('You selected to not require uppercase character specifications');
+        alert('You selected to not include uppercase character specifications');
         upperchar = false;
       }
-    specChar = prompt("Would you like to require special characters (e.g. !, ~, *, etc.)?: ", "Yes");
+    specChar = prompt("Would you like to include special characters (e.g. !, ~, *, etc.)? Type Yes or No: ", "Yes");
       if (specChar === "Yes") {
-        alert('You selected to require special character specifications.');
+        alert('You selected to include special character specifications.');
         specChar = true;
       }
       else {
-        alert('You selected to not require special character specifications');
+        alert('You selected to not include special character specifications');
         specChar = false;
       }  
-    numChar = prompt("Would you like to require numeric characters?: ", "Yes");
+    numChar = prompt("Would you like to include numeric characters? Type Yes or No: ", "Yes");
       if (numChar === "Yes") {
-        alert('You selected to require numeric character specifications.');
+        alert('You selected to include numeric character specifications.');
         numChar = true;
       }
       else {
-        alert('You selected to not require numeric character specifications');
+        alert('You selected to not include numeric character specifications');
         numChar = false;
       }
     }
@@ -127,7 +127,7 @@ function setCharacters() {
   return characters;
 }
 
-function generatePassword(_passLength, _characters) {
+function generatePassword(_passLength, _characters, _specChars) {
   characterSet = setCharacters();
   var result           = '';
   var charactersLength = characterSet.length;

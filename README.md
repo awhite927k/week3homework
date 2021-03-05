@@ -14,6 +14,8 @@ I WANT to randomly generate a password that meets certain criteria
 SO THAT I can create a strong password that provides greater security
 ```
 
+The selected character types to include are considered in the random generation, but are not required, so all specified character elements may not actually appear in the password every time. 
+
 ## Acceptance Criteria
 
 ```
