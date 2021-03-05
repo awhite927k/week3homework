@@ -127,7 +127,7 @@ function setCharacters() {
   return characters;
 }
 
-function generatePassword(_passLength, _characters, _specChars) {
+function generatePassword(_passLength, _characters) {
   characterSet = setCharacters();
   var result           = '';
   var charactersLength = characterSet.length;
